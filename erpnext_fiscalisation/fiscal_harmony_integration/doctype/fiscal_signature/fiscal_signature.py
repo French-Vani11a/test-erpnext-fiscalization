@@ -368,11 +368,11 @@ class FiscalSignature(Document):
 
         return buyer_contact
 
-    def __create_timestamp(self, date: DF.Date, time: datetime.timedelta) -> str:
+    def __create_timestamp(self, date: datetime.date, time: datetime.timedelta) -> str:
         """Returns a formatted timestamp for submitting to Fiscal Harmony.
 
         Args:
-            date (DF.Date): The date component of the datetime.
+            date (datetime.date): The date component of the datetime.
             time (datetime.timedelta): The time component of the datetime.
 
         Returns:
