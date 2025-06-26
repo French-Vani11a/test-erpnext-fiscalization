@@ -12,7 +12,7 @@ from erpnext.selling.doctype.customer.customer import Customer
 from frappe.contacts.doctype.address.address import Address
 from frappe.contacts.doctype.contact.contact import Contact
 from frappe.model.document import Document
-from frappe.types import DF
+#from frappe.types import DF
 
 if TYPE_CHECKING:
     from erpnext_fiscalisation.fiscal_harmony_integration.doctype.fiscal_harmony_settings.fiscal_harmony_settings import (
@@ -24,13 +24,13 @@ class FiscalSignature(Document):
     """This document manages an individual transaction to be posted to Fiscal Harmony."""
 
     if TYPE_CHECKING:
-        sales_invoice: DF.Link
-        fdms_url: DF.Data
-        is_retry: DF.Check
-        error: DF.Data
-        fiscal_harmony_id: DF.Data
-        fiscal_harmony_filename: DF.Data
-        bypass_tin: DF.Check
+        sales_invoice: str
+        fdms_url: str
+        is_retry: bool
+        error: str
+        fiscal_harmony_id: str
+        fiscal_harmony_filename: str
+        bypass_tin: bool
 
     @frappe.whitelist()
     def fetch_signing_data(self):
